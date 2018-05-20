@@ -1,1 +1,1 @@
-worker: python The ACTUAL BOT.py
+worker: python Mega-Bot.py
