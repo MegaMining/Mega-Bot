@@ -8,6 +8,7 @@ import random
 
 Client = discord.Client()
 client = commands.Bot(command_prefix = ".")
+client.remove_command('help')
 @client.event
 async def on_ready():
     print("Thank-You For Using Mega BOT!")
