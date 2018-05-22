@@ -25,7 +25,7 @@ async def on_message(message):
 #.help
 @client.event
 async def on_message(message):
-    if message.content.startswith('.help'):
+    elif message.content.startswith('.help'):
         embed = discord.Embed(title="****MEGA BOT****", description="**A BOT Made by Mr. Mega. List of commands are:**", color=0xeee657)
         embed.add_field(name=".bye", value="Responds to you", inline=False)
         embed.add_field(name=".hello", value="Responds to you", inline=False)
