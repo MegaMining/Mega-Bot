@@ -8,22 +8,24 @@ import random
 
 Client = discord.Client()
 client = commands.Bot(command_prefix = ".")
-client.remove_command('help')
+
 @client.event
 async def on_ready():
     print("Thank-You For Using Mega BOT!")
     await client.change_presence(game=discord.Game(name=".help | Beta v0.0.1"))
-    
+
 @client.event
-async def on_ready()
+async def on_message(message):
     if message.content.startswith('.hello'):
         msg = 'Hello {0.author.mention} How Are You Today'.format(message)
         await client.send_message(message.channel, msg)
-    elif message.content.startswith('.bye'):
+    if message.content.startswith('.bye'):
         msg = 'Goodbye {0.author.mention} Hope To See You Soon :wave:'.format(message)
-        await client.send_message(message.channel, msg)
+        await client.send_message(message.channel, msg)        
 #.help
-    elif message.content.startswith('.help'):
+@client.event
+async def on_message(message):
+    if message.content.startswith('.help'):
         embed = discord.Embed(title="****MEGA BOT****", description="**A BOT Made by Mr. Mega. List of commands are:**", color=0xeee657)
         embed.add_field(name=".bye", value="Responds to you", inline=False)
         embed.add_field(name=".hello", value="Responds to you", inline=False)
@@ -51,13 +53,11 @@ async def on_ready()
     elif message.content.startswith('.suggestions'):
         embed = discord.Embed(title="****SUGGESTION LIST****", description="**SUGGESTIONS I HAVE BEEN GIVEN. THEY ARE ON MY TO DO LIST.**", color=0xeee657)
         await client.send_message(message.channel, embed=embed)
-
 #.version
     elif message.content.startswith('.version'):
         embed = discord.Embed(title="****Version****", description="Beta V0.0.1 | Build:10", color=0xeee657)
         embed.add_field(name="To Display Changes of a version type the version", value="e.g: .v0.0.1", inline=False)
         await client.send_message(message.channel, embed=embed)
-
 #version list
     elif message.content.startswith('.changelog v0.0.1'):
         embed = discord.Embed(title="****Version v0.0.1****", colour=0x3DF270)
