@@ -8,7 +8,7 @@ import random
 
 Client = discord.Client()
 client = commands.Bot(command_prefix = ".")
-
+client.remove_command('help')
 @client.event
 async def on_ready():
     print("Thank-You For Using Mega BOT!")
@@ -21,11 +21,15 @@ async def on_message(message):
         await client.send_message(message.channel, msg)
     if message.content.startswith('.bye'):
         msg = 'Goodbye {0.author.mention} Hope To See You Soon :wave:'.format(message)
-        await client.send_message(message.channel, msg)        
+        await client.send_message(message.channel, msg)
+
+
+        
 #.help
+
 @client.event
 async def on_message(message):
-    elif message.content.startswith('.help'):
+    if message.content.startswith('.help'):
         embed = discord.Embed(title="****MEGA BOT****", description="**A BOT Made by Mr. Mega. List of commands are:**", color=0xeee657)
         embed.add_field(name=".bye", value="Responds to you", inline=False)
         embed.add_field(name=".hello", value="Responds to you", inline=False)
@@ -34,30 +38,36 @@ async def on_message(message):
         embed.add_field(name=".suggestions", value="Shows features that have been suggested and will get added.", inline=False)
         embed.add_field(name=".version", value="Gives you the Version of the BOT", inline=False)
         await client.send_message(message.channel, embed=embed)
+
 #.apply
     elif message.content.startswith(".apply"):
         emb = (discord.Embed(description="Apply to join UnknownLogic!", colour=0x3DF270))
         emb.set_author(name="**Apply Now**", icon_url='https://cdn.discordapp.com/icons/401265219759767552/f9d45f5ad85a29b332d3ddae38651ebc.webp')
         await client.send_message(message.channel, embed=emb)
+
 #.inprogress
     elif message.content.startswith('.inprogress'):
         embed = discord.Embed(title="****IN PROGRESS****", description="**THESE FEATURES ARE NOT COMPLETE**", color=0xeee657)
         await client.send_message(message.channel, embed=embed)
+
 #.meme
     elif message.content.startswith(".meme"):
         await client.send_message(message.channel, random.choice(["Whats 9+10? : 21:",
                                                                   "Mega NEVER Dies",
                                                                   "Wheres your logic ? : It is UnknownLogic",
                                                                   "WHAT ARE THOSE!"]))
+
 #.suggestions
     elif message.content.startswith('.suggestions'):
         embed = discord.Embed(title="****SUGGESTION LIST****", description="**SUGGESTIONS I HAVE BEEN GIVEN. THEY ARE ON MY TO DO LIST.**", color=0xeee657)
         await client.send_message(message.channel, embed=embed)
+
 #.version
     elif message.content.startswith('.version'):
         embed = discord.Embed(title="****Version****", description="Beta V0.0.1 | Build:10", color=0xeee657)
         embed.add_field(name="To Display Changes of a version type the version", value="e.g: .v0.0.1", inline=False)
         await client.send_message(message.channel, embed=embed)
+
 #version list
     elif message.content.startswith('.changelog v0.0.1'):
         embed = discord.Embed(title="****Version v0.0.1****", colour=0x3DF270)
