@@ -27,8 +27,6 @@ async def on_message(message):
 
         
 #.help
-@client.event
-async def on_message(message):
     if message.content.upper().startswith('.HELP'):
         embed = discord.Embed(title="****MEGA BOT****", description="**A BOT Made by Mr. Mega. List of commands are:**")
         embed.add_field(name=".bye", value="Responds to you", inline=False)
@@ -48,7 +46,7 @@ async def on_message(message):
 
 #.inprogress
     elif message.content.startswith('.inprogress'):
-        embed = discord.Embed(title="****IN PROGRESS****", description="**THESE FEATURES ARE NOT COMPLETE**")
+        embed = discord.Embed(title="****IN PROGRESS****", description="**THESE FEATURES ARE NOT COMPLETE**", color=0xeee657)
         await client.send_message(message.channel, embed=embed)
 
 #.meme
