@@ -9,6 +9,7 @@ import random
 Client = discord.Client()
 client = commands.Bot(command_prefix = ".")
 client.remove_command('help')
+
 @client.event
 async def on_ready():
     print("Thank-You For Using Mega BOT!")
@@ -26,9 +27,6 @@ async def on_message(message):
 
         
 #.help
-
-@client.event
-async def on_message(message):
     if message.content.startswith('.help'):
         embed = discord.Embed(title="****MEGA BOT****", description="**A BOT Made by Mr. Mega. List of commands are:**", color=0xeee657)
         embed.add_field(name=".bye", value="Responds to you", inline=False)
@@ -83,5 +81,7 @@ async def on_message(message):
         embed.add_field(name="-", value=".version", inline=False)
         embed.add_field(name="-", value=".version list", inline=False)
         await client.send_message(message.channel, embed=embed)
+
+
 
 client.run(os.getenv('TOKEN'))
