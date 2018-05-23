@@ -24,8 +24,6 @@ async def on_message(message):
         await client.send_message(message.channel, msg)
 
 #.meme
-@client.event
-async def on_message(message):
     if message.content.startswith(".meme"):
         await client.send_message(message.channel, random.choice(["Whats 9+10? : 21:",
                                                                   "Mega NEVER Dies",
@@ -38,9 +36,6 @@ async def on_message(message):
 
         
 #.help
-    
-@client.event
-async def on_message(message):
     if message.content.upper().startswith('.HELP'):
         embed = discord.Embed(title="****MEGA BOT****", description="**A BOT Made by Mr. Mega. List of commands are:**")
         embed.add_field(name=".bye", value="Responds to you", inline=False)
