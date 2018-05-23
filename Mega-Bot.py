@@ -20,14 +20,14 @@ async def on_message(message):
     if message.content.startswith('.hello'):
         msg = 'Hello {0.author.mention} How Are You Today'.format(message)
         await client.send_message(message.channel, msg)
-    if message.content.startswith('.bye'):
+    elif message.content.startswith('.bye'):
         msg = 'Goodbye {0.author.mention} Hope To See You Soon :wave:'.format(message)
         await client.send_message(message.channel, msg)
 
 
         
 #.help
-    if message.content.upper().startswith('.HELP'):
+    elif message.content.upper().startswith('.HELP'):
         embed = discord.Embed(title="****MEGA BOT****", description="**A BOT Made by Mr. Mega. List of commands are:**")
         embed.add_field(name=".bye", value="Responds to you", inline=False)
         embed.add_field(name=".hello", value="Responds to you", inline=False)
