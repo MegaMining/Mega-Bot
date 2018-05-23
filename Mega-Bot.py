@@ -15,7 +15,8 @@ async def on_ready():
     print("Thank-You For Using Mega BOT!")
     await client.change_presence(game=discord.Game(name=".help | Beta v0.0.1"))
 
--
+@client.event
+async def on_message(message):
     if message.content.startswith('.hello'):
         msg = 'Hello {0.author.mention} How Are You Today'.format(message)
         await client.send_message(message.channel, msg)
@@ -27,9 +28,9 @@ async def on_ready():
         
 #.help
 @client.event
-async def on_ready():
-    if message.content.startswith('.help'):
-        embed = discord.Embed(title="****MEGA BOT****", description="**A BOT Made by Mr. Mega. List of commands are:**", color=0xeee657)
+async def on_message(message):
+    if message.content.upper().startswith('.HELP'):
+        embed = discord.Embed(title="****MEGA BOT****", description="**A BOT Made by Mr. Mega. List of commands are:**")
         embed.add_field(name=".bye", value="Responds to you", inline=False)
         embed.add_field(name=".hello", value="Responds to you", inline=False)
         embed.add_field(name=".inprogress", value="Shows features that are in Development.", inline=False)
@@ -37,6 +38,7 @@ async def on_ready():
         embed.add_field(name=".suggestions", value="Shows features that have been suggested and will get added.", inline=False)
         embed.add_field(name=".version", value="Gives you the Version of the BOT", inline=False)
         await client.send_message(message.channel, embed=embed)
+
 
 #.apply
     elif message.content.startswith(".apply"):
@@ -46,7 +48,7 @@ async def on_ready():
 
 #.inprogress
     elif message.content.startswith('.inprogress'):
-        embed = discord.Embed(title="****IN PROGRESS****", description="**THESE FEATURES ARE NOT COMPLETE**", color=0xeee657)
+        embed = discord.Embed(title="****IN PROGRESS****", description="**THESE FEATURES ARE NOT COMPLETE**")
         await client.send_message(message.channel, embed=embed)
 
 #.meme
@@ -82,7 +84,5 @@ async def on_ready():
         embed.add_field(name="-", value=".version", inline=False)
         embed.add_field(name="-", value=".version list", inline=False)
         await client.send_message(message.channel, embed=embed)
-
-
 
 client.run(os.getenv('TOKEN'))
