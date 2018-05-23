@@ -34,18 +34,17 @@ async def on_message(message):
 #embeds after non embeds
 
 
-        
+              
 #.help
     elif message.content.upper().startswith('.HELP'):
-        embed = discord.Embed(title="****MEGA BOT****", description="**A BOT Made by Mr. Mega. List of commands are:**")
+        embed = discord.Embed(title="**MEGA BOT**", description="A BOT Made by Mr. Mega. List of commands are:")
         embed.add_field(name=".bye", value="Responds to you", inline=False)
         embed.add_field(name=".hello", value="Responds to you", inline=False)
         embed.add_field(name=".inprogress", value="Shows features that are in Development.", inline=False)
         embed.add_field(name=".help", value="Gives this message.", inline=False)
         embed.add_field(name=".suggestions", value="Shows features that have been suggested and will get added.", inline=False)
         embed.add_field(name=".version", value="Gives you the Version of the BOT", inline=False)
-        await client.send_message(message.channel, embed=embed)
-    
+        await client.send_message(message.channel, embed=embed, content=" ")    
 
 #.apply
     elif message.content.upper().startswith(".APPLY"):
