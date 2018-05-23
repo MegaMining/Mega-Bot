@@ -19,12 +19,12 @@ async def on_message(message):
     if message.content.upper().startswith('.HELLO'):
         msg = 'Hello {0.author.mention} How Are You Today'.format(message)
         await client.send_message(message.channel, msg)
-    if message.content.upper().startswith('.BYE'):
+    elif message.content.upper().startswith('.BYE'):
         msg = 'Goodbye {0.author.mention} Hope To See You Soon :wave:'.format(message)
         await client.send_message(message.channel, msg)
 
 #.meme
-    if message.content.startswith(".meme"):
+    elif message.content.startswith(".meme"):
         await client.send_message(message.channel, random.choice(["Whats 9+10? : 21:",
                                                                   "Mega NEVER Dies",
                                                                   "Wheres your logic ? : It is UnknownLogic",
@@ -36,7 +36,7 @@ async def on_message(message):
 
         
 #.help
-    if message.content.upper().startswith('.HELP'):
+    elif message.content.upper().startswith('.HELP'):
         embed = discord.Embed(title="****MEGA BOT****", description="**A BOT Made by Mr. Mega. List of commands are:**")
         embed.add_field(name=".bye", value="Responds to you", inline=False)
         embed.add_field(name=".hello", value="Responds to you", inline=False)
@@ -48,34 +48,34 @@ async def on_message(message):
     
 
 #.apply
-    if message.content.upper().startswith(".APPLY"):
+    elif message.content.upper().startswith(".APPLY"):
         emb = (discord.Embed(description="Apply to join UnknownLogic!", colour=0x3DF270))
         emb.set_author(name="**Apply Now**", icon_url='https://cdn.discordapp.com/icons/401265219759767552/f9d45f5ad85a29b332d3ddae38651ebc.webp')
         await client.send_message(message.channel, embed=emb)
 
 #.inprogress
-    if message.content.upper().startswith('.INPROGRESS'):
+    elif message.content.upper().startswith('.INPROGRESS'):
         embed = discord.Embed(title="****IN PROGRESS****", description="**THESE FEATURES ARE NOT COMPLETE**", color=0xeee657)
         await client.send_message(message.channel, embed=embed)
 
 #.suggestions
-    if message.content.upper().startswith('.SUGGESTIONS'):
+    elif message.content.upper().startswith('.SUGGESTIONS'):
         embed = discord.Embed(title="****SUGGESTION LIST****", description="**SUGGESTIONS I HAVE BEEN GIVEN. THEY ARE ON MY TO DO LIST.**", color=0xeee657)
         await client.send_message(message.channel, embed=embed)
 
 #.version
-    if message.content.upper().startswith('.VERSION'):
+    elif message.content.upper().startswith('.VERSION'):
         embed = discord.Embed(title="****Version****", description="Beta V0.0.1 | Build:10", color=0xeee657)
         embed.add_field(name="To Display Changes of a version type the version", value="e.g: .v0.0.1", inline=False)
         await client.send_message(message.channel, embed=embed)
 
 #version list
-    if message.content.upper().startswith('.CHANGELOG V0.0.1'):
+    elif message.content.upper().startswith('.CHANGELOG V0.0.1'):
         embed = discord.Embed(title="****Version v0.0.1****", colour=0x3DF270)
         embed.add_field(name="Changelog:", value="Mega BOT up and Running", inline=False)
         await client.send_message(message.channel, embed=embed)
 
-    if message.content.upper().startswith('.CHANGELOG V0.0.2'):
+    elif message.content.upper().startswith('.CHANGELOG V0.0.2'):
         embed = discord.Embed(title="****Version v0.0.2 Changelog****", colour=0x3DF270)
         embed.add_field(name="Added", value=".apply", inline=False)
         embed.add_field(name="-", value=".inprogress", inline=False)
