@@ -12,20 +12,36 @@ client.remove_command('help')
 @client.event
 async def on_ready():
     print("Thank-You For Using Mega BOT!")
-    await client.change_presence(game=discord.Game(name=".help | Beta v0.0.1"))
+    await client.change_presence(game=discord.Game(name=".Help | Beta v0.0.1"))
 
 @client.event
 async def on_message(message):
-    if message.content.startswith('.hello'):
+    if message.content.upper().startswith('.HELLO'):
         msg = 'Hello {0.author.mention} How Are You Today'.format(message)
         await client.send_message(message.channel, msg)
-    if message.content.startswith('.bye'):
+    if message.content.upper().startswith('.BYE'):
         msg = 'Goodbye {0.author.mention} Hope To See You Soon :wave:'.format(message)
         await client.send_message(message.channel, msg)
+
+        
+#embeds after non embeds
+#.meme
+@client.event
+async def on_message(message):
+    if message.content.startswith(".meme"):
+        await client.send_message(message.channel, random.choice(["Whats 9+10? : 21:",
+                                                                  "Mega NEVER Dies",
+                                                                  "Wheres your logic ? : It is UnknownLogic",
+                                                                  "WHAT ARE THOSE!"]))
+
+
+#embeds after non embeds
 
 
         
 #.help
+@client.event
+async def on_message(message):
     if message.content.upper().startswith('.HELP'):
         embed = discord.Embed(title="****MEGA BOT****", description="**A BOT Made by Mr. Mega. List of commands are:**")
         embed.add_field(name=".bye", value="Responds to you", inline=False)
@@ -35,7 +51,6 @@ async def on_message(message):
         embed.add_field(name=".suggestions", value="Shows features that have been suggested and will get added.", inline=False)
         embed.add_field(name=".version", value="Gives you the Version of the BOT", inline=False)
         await client.send_message(message.channel, embed=embed)
-
 
 #.apply
     if message.content.upper().startswith(".APPLY"):
@@ -47,13 +62,6 @@ async def on_message(message):
     if message.content.upper().startswith('.INPROGRESS'):
         embed = discord.Embed(title="****IN PROGRESS****", description="**THESE FEATURES ARE NOT COMPLETE**", color=0xeee657)
         await client.send_message(message.channel, embed=embed)
-
-#.meme
-    if message.content.upper().startswith(".MEME"):
-        await client.send_message(message.channel, random.choice(["Whats 9+10? : 21:",
-                                                                  "Mega NEVER Dies",
-                                                                  "Wheres your logic ? : It is UnknownLogic",
-                                                                  "WHAT ARE THOSE!"]))
 
 #.suggestions
     if message.content.upper().startswith('.SUGGESTIONS'):
