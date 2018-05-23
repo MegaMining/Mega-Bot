@@ -15,8 +15,7 @@ async def on_ready():
     print("Thank-You For Using Mega BOT!")
     await client.change_presence(game=discord.Game(name=".help | Beta v0.0.1"))
 
-@client.event
-async def on_message(message):
+-
     if message.content.startswith('.hello'):
         msg = 'Hello {0.author.mention} How Are You Today'.format(message)
         await client.send_message(message.channel, msg)
@@ -27,6 +26,8 @@ async def on_message(message):
 
         
 #.help
+@client.event
+async def on_ready():
     if message.content.startswith('.help'):
         embed = discord.Embed(title="****MEGA BOT****", description="**A BOT Made by Mr. Mega. List of commands are:**", color=0xeee657)
         embed.add_field(name=".bye", value="Responds to you", inline=False)
