@@ -54,34 +54,34 @@ async def on_message(message):
 
 #.inprogress
     elif message.content.upper().startswith('.INPROGRESS'):
-        embed = discord.Embed(title="****IN PROGRESS****", description="**THESE FEATURES ARE NOT COMPLETE**", color=0xeee657)
-        await client.send_message(message.channel, embed=embed)
+        embed1 = discord.Embed(title="****IN PROGRESS****", description="**THESE FEATURES ARE NOT COMPLETE**", color=0xeee657)
+        await client.send_message(message.channel, embed=embed1)
 
 #.suggestions
     elif message.content.upper().startswith('.SUGGESTIONS'):
-        embed = discord.Embed(title="****SUGGESTION LIST****", description="**SUGGESTIONS I HAVE BEEN GIVEN. THEY ARE ON MY TO DO LIST.**", color=0xeee657)
-        await client.send_message(message.channel, embed=embed)
+        embed2 = discord.Embed(title="****SUGGESTION LIST****", description="**SUGGESTIONS I HAVE BEEN GIVEN. THEY ARE ON MY TO DO LIST.**", color=0xeee657)
+        await client.send_message(message.channel, embed=embed2)
 
 #.version
     elif message.content.upper().startswith('.VERSION'):
-        embed = discord.Embed(title="****Version****", description="Beta V0.0.1 | Build:10", color=0xeee657)
-        embed.add_field(name="To Display Changes of a version type the version", value="e.g: .v0.0.1", inline=False)
-        await client.send_message(message.channel, embed=embed)
+        embed3 = discord.Embed(title="****Version****", description="Beta V0.0.1 | Build:10", color=0xeee657)
+        embed3.add_field(name="To Display Changes of a version type the version", value="e.g: .v0.0.1", inline=False)
+        await client.send_message(message.channel, embed=embed3)
 
 #version list
     elif message.content.upper().startswith('.CHANGELOG V0.0.1'):
-        embed = discord.Embed(title="****Version v0.0.1****", colour=0x3DF270)
-        embed.add_field(name="Changelog:", value="Mega BOT up and Running", inline=False)
-        await client.send_message(message.channel, embed=embed)
+        embed4 = discord.Embed(title="****Version v0.0.1****", colour=0x3DF270)
+        embed4.add_field(name="Changelog:", value="Mega BOT up and Running", inline=False)
+        await client.send_message(message.channel, embed=embed4)
 
     elif message.content.upper().startswith('.CHANGELOG V0.0.2'):
-        embed = discord.Embed(title="****Version v0.0.2 Changelog****", colour=0x3DF270)
-        embed.add_field(name="Added", value=".apply", inline=False)
-        embed.add_field(name="-", value=".inprogress", inline=False)
-        embed.add_field(name="-", value=".meme", inline=False)
-        embed.add_field(name="-", value=".suggestions", inline=False)
-        embed.add_field(name="-", value=".version", inline=False)
-        embed.add_field(name="-", value=".version list", inline=False)
-        await client.send_message(message.channel, embed=embed)
+        embed5 = discord.Embed(title="****Version v0.0.2 Changelog****", colour=0x3DF270)
+        embed5.add_field(name="Added", value=".apply", inline=False)
+        embed5.add_field(name="-", value=".inprogress", inline=False)
+        embed5.add_field(name="-", value=".meme", inline=False)
+        embed5.add_field(name="-", value=".suggestions", inline=False)
+        embed5.add_field(name="-", value=".version", inline=False)
+        embed5.add_field(name="-", value=".version list", inline=False)
+        await client.send_message(message.channel, embed=embed5)
 
 client.run(os.getenv('TOKEN'))
