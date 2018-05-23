@@ -49,8 +49,8 @@ async def on_message(message):
 
 #.apply
     elif message.content.upper().startswith(".APPLY"):
-        emb = (discord.Embed(description="Apply to join UnknownLogic!", colour=0x3DF270))
-        emb.set_author(name="**Apply Now**", icon_url='https://cdn.discordapp.com/icons/401265219759767552/f9d45f5ad85a29b332d3ddae38651ebc.webp')
+        embed = (discord.Embed(description="Apply to join UnknownLogic!", colour=0x3DF270))
+        embed.set_author(name="**Apply Now**", icon_url='https://cdn.discordapp.com/icons/401265219759767552/f9d45f5ad85a29b332d3ddae38651ebc.webp')
         await client.send_message(message.channel, embed=emb)
 
 #.inprogress
